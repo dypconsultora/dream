@@ -147,6 +147,7 @@ img{ max-width:100%; display:block; }
   line-height:1.7;
 }
 .hero p.hero-lead{ color:#4A3728; }
+.hero h1 .ink{ color:var(--black-beauty); }
 .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; }
 .hero-img{
   height:560px;
