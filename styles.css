@@ -312,10 +312,10 @@ img{ max-width:100%; display:block; }
   gap:32px 60px;
 }
 .why-item{ border-top:1px solid var(--line); padding-top:22px; }
-.why-item .why-icon{
-  font-size:26px; line-height:1; margin-bottom:14px;
-}
-.why-item h3{ font-size:22px; font-weight:500; margin-bottom:12px; }
+.why-item .why-head{ display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+.why-item .why-icon{ color:#4A3728; display:inline-flex; flex-shrink:0; }
+.why-item .why-icon svg{ width:26px; height:26px; display:block; }
+.why-item h3{ font-size:22px; font-weight:500; margin-bottom:0; }
 .why-item p{ color:var(--text-soft); font-size:15px; line-height:1.7; }
 .stats{
   margin-top:56px;
