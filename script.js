@@ -120,8 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
 function setTheme(theme){
   document.documentElement.setAttribute('data-theme', theme);
   try { localStorage.setItem('theme', theme); } catch(e){}
-  const sel = document.getElementById('theme-select');
-  if (sel) sel.value = theme;
+  document.querySelectorAll('.theme-switch button').forEach(b => {
+    b.classList.toggle('active', b.dataset.theme === theme);
+  });
 }
 (function(){
   let saved = null;

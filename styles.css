@@ -157,17 +157,19 @@ img{ max-width:100%; display:block; }
 .lang-switch button.active{ color:var(--black-beauty); font-weight:600; }
 .lang-switch .divider{ opacity:.4; }
 .nav-cta{ padding:10px 20px; font-size:12px; }
-.theme-select{
-  font-family:inherit; font-size:13px; font-weight:500; line-height:1;
-  color:var(--text-soft); background:transparent;
-  border:1px solid var(--line); border-radius:7px;
-  padding:6px 8px; cursor:pointer;
-  transition:.25s ease;
+.theme-switch{
+  display:flex; align-items:center; gap:6px;
+  font-size:13px; font-weight:500; color:var(--text-soft);
 }
-.navbar:not(.scrolled) .theme-select{
-  color:rgba(244,245,240,.85); border-color:rgba(244,245,240,.3);
+.theme-switch button{
+  background:none; border:none; cursor:pointer;
+  font-size:13px; font-weight:500; color:var(--text-soft);
+  font-family:inherit; padding:4px 2px; transition:.25s ease;
 }
-.theme-select option{ color:#27262D; background:#F4F5F0; }
+.theme-switch button.active{ color:var(--black-beauty); font-weight:600; }
+.theme-switch .divider{ opacity:.4; }
+.navbar:not(.scrolled) .theme-switch button{ color:rgba(244,245,240,.7); }
+.navbar:not(.scrolled) .theme-switch button.active{ color:#fff; }
 
 /* ---------- Hero ---------- */
 .hero{
