@@ -257,6 +257,7 @@ img{ max-width:100%; display:block; }
   transition:.3s ease;
   cursor:pointer;
   position:relative;
+  display:flex; flex-direction:column;
 }
 .service-card:hover{ background:var(--marshmallow); }
 .service-num{
@@ -267,6 +268,7 @@ img{ max-width:100%; display:block; }
 .service-card h3{ font-size:18px; font-weight:500; margin-bottom:16px; }
 .service-card p{ font-size:14px; color:var(--text-soft); line-height:1.7; margin-bottom:30px; }
 .service-card .arrow{
+  margin-top:auto;
   font-size:12px; letter-spacing:.12em; text-transform:uppercase;
   color:var(--black-beauty); font-weight:500;
 }
