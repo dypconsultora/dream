@@ -218,7 +218,9 @@ img{ max-width:100%; display:block; }
   z-index:-1;
 }
 .about h2{ font-size:clamp(40px,4.8vw,62px); line-height:1.05; font-weight:500; }
-.about p{ font-size:17px; color:var(--text-soft); line-height:1.75; }
+.about p{ font-size:17px; color:var(--text-soft); line-height:1.75; margin-bottom:18px; }
+.about p:last-child{ margin-bottom:0; }
+.about p.about-lead{ font-size:21px; color:var(--text); font-weight:500; }
 .pillars{ margin-top:44px; display:grid; grid-template-columns:repeat(3,1fr); gap:30px; }
 .pillar{ border-top:1px solid var(--line); padding-top:20px; }
 .pillar-label{
