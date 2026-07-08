@@ -14,6 +14,37 @@
   --line:#D9D3C4;
 }
 
+/* ---------- Modo oscuro ---------- */
+:root[data-theme="dark"]{
+  --bright-white:#151419;
+  --marshmallow:#1B1A21;
+  --coconut:#201E27;
+  --black-beauty:#F1F0EB;
+  --text:#EDECE7;
+  --text-soft:#A29FA9;
+  --line:#34323D;
+}
+/* Bloques que ya eran oscuros: se mantienen oscuros */
+:root[data-theme="dark"] .services-cta{ background:#100F14; color:#F1F0EB; }
+:root[data-theme="dark"] .services-cta h3{ color:#F4F5F0; }
+:root[data-theme="dark"] .contact{ background:#100F14; color:#F1F0EB; }
+:root[data-theme="dark"] footer{ background:#100F14; }
+:root[data-theme="dark"] .btn-light{ background:#F4F5F0; color:#27262D; }
+:root[data-theme="dark"] .btn-light:hover{ background:#EDE4D3; }
+/* Hero: mantiene sus elementos claros */
+:root[data-theme="dark"] .hero h1 .ink{ color:#F4F5F0; }
+:root[data-theme="dark"] .hero .btn-primary{ background:#F4F5F0; color:#27262D; }
+:root[data-theme="dark"] .hero .btn-primary:hover{ background:#EDE4D3; }
+:root[data-theme="dark"] .hero .btn-outline{ color:#F4F5F0; }
+:root[data-theme="dark"] .hero .btn-outline:hover{ background:#F4F5F0; color:#27262D; }
+/* Acentos marrón -> tono claro legible en oscuro */
+:root[data-theme="dark"] .pillar-label,
+:root[data-theme="dark"] .why-item .why-icon,
+:root[data-theme="dark"] .stat .num{ color:#D8BB98; }
+/* Navbar sólido en oscuro */
+:root[data-theme="dark"] .navbar.scrolled{ background:rgba(21,20,25,.9); }
+:root[data-theme="dark"] .navbar.scrolled .logo img{ filter:brightness(0) invert(1); }
+
 *{ box-sizing:border-box; margin:0; padding:0; }
 
 html{ scroll-behavior:smooth; }
@@ -126,6 +157,17 @@ img{ max-width:100%; display:block; }
 .lang-switch button.active{ color:var(--black-beauty); font-weight:600; }
 .lang-switch .divider{ opacity:.4; }
 .nav-cta{ padding:10px 20px; font-size:12px; }
+.theme-select{
+  font-family:inherit; font-size:13px; font-weight:500; line-height:1;
+  color:var(--text-soft); background:transparent;
+  border:1px solid var(--line); border-radius:7px;
+  padding:6px 8px; cursor:pointer;
+  transition:.25s ease;
+}
+.navbar:not(.scrolled) .theme-select{
+  color:rgba(244,245,240,.85); border-color:rgba(244,245,240,.3);
+}
+.theme-select option{ color:#27262D; background:#F4F5F0; }
 
 /* ---------- Hero ---------- */
 .hero{

@@ -116,6 +116,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+/* ---------- Modo día / noche ---------- */
+function setTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  try { localStorage.setItem('theme', theme); } catch(e){}
+  const sel = document.getElementById('theme-select');
+  if (sel) sel.value = theme;
+}
+(function(){
+  let saved = null;
+  try { saved = localStorage.getItem('theme'); } catch(e){}
+  setTheme(saved || 'light');
+})();
+
 /* ---------- Contador animado de stats (0 → número) ---------- */
 (function(){
   const nums = document.querySelectorAll('.stats .stat .num');

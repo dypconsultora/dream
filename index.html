@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'light');}catch(e){}</script>
 </head>
 <body>
 
@@ -31,6 +32,10 @@
         <span class="divider">/</span>
         <button onclick="setLang('en',this)">EN</button>
       </div>
+      <select class="theme-select" id="theme-select" aria-label="Modo día / noche" onchange="setTheme(this.value)">
+        <option value="light" data-es="☀ Día" data-en="☀ Day">☀ Día</option>
+        <option value="dark" data-es="☾ Noche" data-en="☾ Night">☾ Noche</option>
+      </select>
       <a href="#contact" class="btn btn-primary nav-cta" data-es="Agendar consulta" data-en="Book a call">Agendar consulta</a>
     </div>
   </div>
