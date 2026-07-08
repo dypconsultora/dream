@@ -116,6 +116,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+/* ---------- Contador animado de stats (0 → número) ---------- */
+(function(){
+  const nums = document.querySelectorAll('.stats .stat .num');
+  if (!nums.length) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const run = (el) => {
+    const m = el.textContent.trim().match(/^(\D*)(\d+)(\D*)$/); // "24/7" no matchea -> queda estático
+    if (!m) return;
+    const prefix = m[1], target = parseInt(m[2], 10), suffix = m[3];
+    if (reduce || typeof gsap === 'undefined') { el.textContent = prefix + target + suffix; return; }
+    const obj = { v: 0 };
+    el.textContent = prefix + '0' + suffix;
+    gsap.to(obj, {
+      v: target, duration: 1.6, ease: 'power2.out',
+      onUpdate: () => { el.textContent = prefix + Math.round(obj.v) + suffix; }
+    });
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } });
+  }, { threshold: 0.6 });
+  nums.forEach(n => io.observe(n));
+})();
+
 /* ---------- Navbar sólido al hacer scroll ---------- */
 (function(){
   const nav = document.querySelector('.navbar');
