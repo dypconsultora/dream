@@ -138,7 +138,7 @@ img{ max-width:100%; display:block; }
   font-size:clamp(44px,6.2vw,84px);
   line-height:1;
   font-weight:500;
-  color:var(--black-beauty);
+  color:#4A3728;
   margin-bottom:36px;
 }
 .hero p{
