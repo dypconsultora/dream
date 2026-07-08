@@ -173,10 +173,10 @@ img{ max-width:100%; display:block; }
 .hero .btn-outline{ border-color:rgba(244,245,240,.5); color:var(--bright-white); background:transparent; }
 .hero .btn-outline:hover{ background:var(--bright-white); color:var(--black-beauty); }
 .scroll-indicator{
-  position:absolute; bottom:30px; left:40px; z-index:1;
+  position:absolute; bottom:30px; left:50%; transform:translateX(-50%); z-index:1;
   font-size:11px; letter-spacing:.18em; text-transform:uppercase;
   color:rgba(244,245,240,.7);
-  display:flex; align-items:center; gap:14px;
+  display:flex; flex-direction:column; align-items:center; gap:8px;
 }
 .scroll-indicator span:last-child{ animation:bounce 1.8s infinite; }
 @keyframes bounce{
