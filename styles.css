@@ -250,7 +250,7 @@ img{ max-width:100%; display:block; }
   border-left:1px solid var(--line);
 }
 .service-card{
-  padding:28px 32px;
+  padding:28px 28px;
   border-right:1px solid var(--line);
   border-bottom:1px solid var(--line);
   background:var(--bright-white);
@@ -264,7 +264,7 @@ img{ max-width:100%; display:block; }
   color:var(--text-soft);
   margin-bottom:50px;
 }
-.service-card h3{ font-size:22px; font-weight:500; margin-bottom:16px; }
+.service-card h3{ font-size:18px; font-weight:500; margin-bottom:16px; }
 .service-card p{ font-size:14px; color:var(--text-soft); line-height:1.7; margin-bottom:30px; }
 .service-card .arrow{
   font-size:12px; letter-spacing:.12em; text-transform:uppercase;
