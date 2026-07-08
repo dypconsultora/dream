@@ -71,7 +71,7 @@ img{ max-width:100%; display:block; }
 }
 .nav-inner{
   max-width:1240px; margin:0 auto;
-  padding:20px 40px;
+  padding:6px 40px;
   display:flex; align-items:center; justify-content:space-between;
   gap:30px;
 }
@@ -579,7 +579,7 @@ footer{
 /* ---------- Responsive ---------- */
 @media (max-width:960px){
   .container{ padding:0 24px; }
-  .nav-inner{ padding:16px 24px; gap:14px; }
+  .nav-inner{ padding:6px 24px; gap:14px; }
   .nav-menu{ display:none; }
   .hero{ padding:130px 0 70px; }
   .hero-grid{ grid-template-columns:1fr; gap:50px; padding:0 24px; }
