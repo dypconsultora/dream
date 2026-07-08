@@ -250,7 +250,7 @@ img{ max-width:100%; display:block; }
   border-left:1px solid var(--line);
 }
 .service-card{
-  padding:44px 32px;
+  padding:28px 32px;
   border-right:1px solid var(--line);
   border-bottom:1px solid var(--line);
   background:var(--bright-white);
