@@ -115,3 +115,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link.classList.add('active');
   }
 });
+
+/* ---------- Animación de entrada del hero (GSAP) ---------- */
+if (typeof gsap !== 'undefined') {
+  const mmHero = gsap.matchMedia();
+  mmHero.add({
+    reduce: '(prefers-reduced-motion: reduce)',
+    motion: '(prefers-reduced-motion: no-preference)'
+  }, (ctx) => {
+    const reduce = ctx.conditions.reduce;
+    gsap.from('.hero-tag, .hero h1 span, .hero-lead, .hero-ctas', {
+      y: reduce ? 0 : 30,
+      autoAlpha: 0,
+      duration: reduce ? 0.001 : 0.9,
+      ease: 'power3.out',
+      stagger: reduce ? 0 : 0.12,
+      delay: 0.1
+    });
+  });
+}
