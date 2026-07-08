@@ -65,14 +65,12 @@ img{ max-width:100%; display:block; }
 .navbar{
   position:fixed; top:0; left:0; right:0;
   background:linear-gradient(180deg, rgba(22,19,16,.55) 0%, rgba(22,19,16,0) 100%);
-  border-bottom:1px solid transparent;
   z-index:1000;
-  transition:background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+  transition:background .3s ease, backdrop-filter .3s ease;
 }
 .navbar.scrolled{
   background:rgba(244,245,240,.92);
   backdrop-filter:blur(10px);
-  border-bottom-color:var(--line);
 }
 /* Estado transparente sobre el hero: logo y textos en claro */
 .navbar:not(.scrolled) .logo img{ filter:brightness(0) invert(1); }
