@@ -116,6 +116,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+/* ---------- Navbar sólido al hacer scroll ---------- */
+(function(){
+  const nav = document.querySelector('.navbar');
+  if (!nav) return;
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
 /* ---------- Animación de entrada del hero (GSAP) ---------- */
 if (typeof gsap !== 'undefined') {
   const mmHero = gsap.matchMedia();
