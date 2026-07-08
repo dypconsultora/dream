@@ -207,9 +207,9 @@ img{ max-width:100%; display:block; }
 .about-img-frame{ position:relative; }
 .about-img{
   height:620px;
-  background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80');
-  background-size:cover; background-position:center;
-  filter:grayscale(20%);
+  background-image:url('assets/about.jpg');
+  background-size:cover; background-position:center top;
+  filter:grayscale(10%);
 }
 .about-img-frame::after{
   content:''; position:absolute;
