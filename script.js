@@ -126,30 +126,28 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 
-/* ---------- Carrusel de testimonios ---------- */
-(function(){
-  const carousel = document.querySelector('.test-carousel');
-  if (!carousel) return;
-  const track = carousel.querySelector('.test-track');
-  const viewport = carousel.querySelector('.test-viewport');
-  const cards = Array.from(track.children);
-  const prevBtn = carousel.querySelector('.test-arrow.prev');
-  const nextBtn = carousel.querySelector('.test-arrow.next');
-  const dotsWrap = carousel.querySelector('.test-dots');
+/* ---------- Carrusel genérico (testimonios + logos) ---------- */
+function setupCarousel(root, sel, perPageFn){
+  if (!root) return;
+  const track = root.querySelector(sel.track);
+  const viewport = root.querySelector(sel.viewport);
+  const slides = Array.from(track.children);
+  const prevBtn = root.querySelector(sel.prev);
+  const nextBtn = root.querySelector(sel.next);
+  const dotsWrap = root.querySelector(sel.dots);
   let page = 0;
 
-  const perPage = () => window.innerWidth < 600 ? 1 : (window.innerWidth < 960 ? 2 : 3);
-  const pageCount = () => Math.ceil(cards.length / perPage());
+  const pageCount = () => Math.ceil(slides.length / perPageFn());
   const step = () => {
     const gap = parseFloat(getComputedStyle(track).gap) || 0;
-    return cards[0].getBoundingClientRect().width + gap;
+    return slides[0].getBoundingClientRect().width + gap;
   };
   const maxScroll = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
 
   function render(){
     const pc = pageCount();
     page = Math.min(Math.max(page, 0), pc - 1);
-    const target = Math.min(page * perPage() * step(), maxScroll());
+    const target = Math.min(page * perPageFn() * step(), maxScroll());
     track.style.transform = 'translateX(' + (-target) + 'px)';
     dotsWrap.innerHTML = '';
     for (let i = 0; i < pc; i++){
@@ -168,7 +166,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let rt;
   window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(render, 150); }, { passive: true });
   render();
-})();
+}
+setupCarousel(document.querySelector('.test-carousel'),
+  { track: '.test-track', viewport: '.test-viewport', prev: '.test-arrow.prev', next: '.test-arrow.next', dots: '.test-dots' },
+  () => window.innerWidth < 600 ? 1 : (window.innerWidth < 960 ? 2 : 3));
+setupCarousel(document.querySelector('.logos-carousel'),
+  { track: '.logos-track', viewport: '.logos-viewport', prev: '.logos-arrow.prev', next: '.logos-arrow.next', dots: '.logos-dots' },
+  () => window.innerWidth < 600 ? 2 : (window.innerWidth < 960 ? 3 : 5));
 
 /* ---------- Modo día / noche ---------- */
 function setTheme(theme){
