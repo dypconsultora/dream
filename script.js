@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
       (mensaje ? '%0A' + encodeURIComponent(mensaje) : '');
 
     // Abre WhatsApp con el mensaje prellenado
-    window.open('https://wa.me/5491100000000?text=' + texto, '_blank');
+    window.open('https://wa.me/5491169541894?text=' + texto, '_blank');
 
     // Mensaje de éxito visual
     const btn = form.querySelector('button[type="submit"]');
