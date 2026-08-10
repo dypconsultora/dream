@@ -168,7 +168,10 @@ img{ max-width:100%; display:block; }
   font-size:13px; font-weight:500; color:var(--text-soft);
   font-family:inherit; padding:4px 2px; transition:.25s ease;
 }
-.theme-switch button.active{ color:var(--black-beauty); font-weight:600; }
+.theme-switch button{ display:inline-flex; align-items:center; }
+.theme-switch button svg{ width:17px; height:17px; display:block; }
+.theme-switch button{ color:var(--text-soft); opacity:.55; }
+.theme-switch button.active{ color:var(--black-beauty); opacity:1; }
 .theme-switch .divider{ opacity:.4; }
 .navbar:not(.scrolled) .theme-switch button{ color:rgba(244,245,240,.7); }
 .navbar:not(.scrolled) .theme-switch button.active{ color:#fff; }
@@ -662,6 +665,7 @@ footer{
   box-shadow:0 10px 30px rgba(39,38,45,.25);
   transition:.3s ease;
 }
+.wapp svg{ width:30px; height:30px; display:block; }
 .wapp:hover{ transform:translateY(-4px); background:#3a3842; }
 .wapp::before{
   content:''; position:absolute; inset:-6px;
