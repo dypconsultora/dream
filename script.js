@@ -116,6 +116,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+/* ---------- FAQ acordeón: solo una abierta a la vez ---------- */
+(function(){
+  const items = document.querySelectorAll('.faq-item');
+  items.forEach(d => {
+    d.addEventListener('toggle', () => {
+      if (d.open) items.forEach(o => { if (o !== d) o.open = false; });
+    });
+  });
+})();
+
 /* ---------- Carrusel de testimonios ---------- */
 (function(){
   const carousel = document.querySelector('.test-carousel');
