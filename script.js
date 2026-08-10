@@ -45,22 +45,30 @@ window.addEventListener('scroll', () => {
   });
 });
 
-/* ---------- Fade-in al hacer scroll ---------- */
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('in');
-      io.unobserve(e.target);
-    }
+/* ---------- Animaciones al scroll (GSAP ScrollTrigger) ---------- */
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+  const mmScroll = gsap.matchMedia();
+  mmScroll.add('(prefers-reduced-motion: no-preference)', () => {
+    // Encabezados de sección: fundido + subida
+    gsap.utils.toArray('.section-heading, .about h2, .about .about-lead, #faq h2, .contact-info h2').forEach((el) => {
+      gsap.from(el, {
+        y: 40, autoAlpha: 0, duration: 0.9, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' }
+      });
+    });
+    // Tarjetas / ítems: aparición en cascada
+    const items = '.service-card, .process-step, .why-item, .pillar, .case, .stat, .faq-item, .channel';
+    gsap.set(items, { autoAlpha: 0, y: 32 });
+    ScrollTrigger.batch(items, {
+      start: 'top 88%',
+      onEnter: (batch) => gsap.to(batch, {
+        autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.1, overwrite: true
+      })
+    });
   });
-}, { threshold: 0.12 });
-
-document.querySelectorAll(
-  '.service-card, .process-step, .why-item, .case, .test, .stat, .pillar, .faq-item, .channel'
-).forEach(el => {
-  el.classList.add('reveal');
-  io.observe(el);
-});
+  window.addEventListener('load', () => ScrollTrigger.refresh());
+}
 
 /* ---------- Formulario de contacto ---------- */
 document.addEventListener('DOMContentLoaded', () => {
