@@ -527,6 +527,7 @@ img{ max-width:100%; display:block; }
   color:var(--text-soft);
   font-size:15px; line-height:1.75;
 }
+.faq-a p + p{ margin-top:12px; }
 
 /* ---------- Contacto ---------- */
 .contact{ padding:140px 0; background:var(--black-beauty); color:var(--bright-white); }
