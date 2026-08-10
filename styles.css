@@ -470,6 +470,7 @@ img{ max-width:100%; display:block; }
   background:var(--marshmallow);
   position:relative;
   display:flex; flex-direction:column;
+  border-radius:10px;
 }
 .test .stars{
   color:var(--black-beauty);
