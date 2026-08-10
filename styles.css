@@ -676,8 +676,10 @@ footer{
   display:flex; align-items:center; justify-content:center;
   box-shadow:0 10px 30px rgba(39,38,45,.25);
   transition:.3s ease;
+  opacity:0; visibility:hidden; transform:translateY(12px); pointer-events:none;
 }
-.to-top:hover{ transform:translateY(-4px); background:#3a3842; }
+.to-top.visible{ opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto; }
+.to-top.visible:hover{ transform:translateY(-4px); background:#3a3842; }
 .to-top svg{ width:26px; height:26px; display:block; }
 .wapp::before{
   content:''; position:absolute; inset:-6px;

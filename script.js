@@ -116,11 +116,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-/* ---------- Botón ir arriba (scroll suave) ---------- */
+/* ---------- Botón ir arriba (aparece al pasar el hero) ---------- */
 (function(){
   const btn = document.querySelector('.to-top');
   if (!btn) return;
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  const hero = document.querySelector('#hero');
+  const threshold = () => hero ? hero.offsetHeight - 120 : 600;
+  const onScroll = () => btn.classList.toggle('visible', window.scrollY > threshold());
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
 })();
 
 /* ---------- FAQ acordeón: solo una abierta a la vez ---------- */
