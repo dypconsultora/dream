@@ -391,9 +391,9 @@ img{ max-width:100%; display:block; }
 
 /* ---------- Casos ---------- */
 .cases{ padding:140px 0; background:var(--marshmallow); }
-.logos-carousel{ margin-top:60px; margin-bottom:50px; position:relative; }
+.logos-carousel{ margin-top:60px; margin-bottom:50px; position:relative; padding:0 60px; }
 .logos-viewport{
-  overflow:hidden; padding:34px 60px;
+  overflow:hidden; padding:34px 0;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
@@ -718,7 +718,8 @@ footer{
   .footer-grid{ grid-template-columns:1fr; }
   .footer-bottom{ flex-direction:column; text-align:center; }
   .logos-track .logo-slide{ flex:0 0 calc((100% - 24px)/2); }
-  .logos-viewport{ padding:24px 46px; }
+  .logos-carousel{ padding:0 46px; }
+  .logos-viewport{ padding:24px 0; }
   .test-track .test{ flex:0 0 100%; }
   .test-carousel{ padding:0 46px; }
   .test{ padding:32px 26px; }
