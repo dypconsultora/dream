@@ -40,7 +40,9 @@
 /* Acentos marrón -> tono claro legible en oscuro */
 :root[data-theme="dark"] .pillar-label,
 :root[data-theme="dark"] .why-item .why-icon,
-:root[data-theme="dark"] .stat .num{ color:#D8BB98; }
+:root[data-theme="dark"] .stat .num,
+:root[data-theme="dark"] .brand-accent{ color:#D8BB98; }
+.brand-accent{ color:#4A3728; }
 /* Navbar sólido en oscuro */
 :root[data-theme="dark"] .navbar.scrolled{ background:rgba(21,20,25,.9); }
 :root[data-theme="dark"] .navbar.scrolled .logo img{ filter:brightness(0) invert(1); }
