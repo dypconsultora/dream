@@ -66,6 +66,26 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.1, overwrite: true
       })
     });
+
+    // Parallax de la imagen del hero
+    gsap.to('.hero-bg', {
+      yPercent: 12, ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+    });
+
+    // Pop de los números (escala con rebote, junto al conteo)
+    gsap.from('.stat .num', {
+      scale: 0.5, autoAlpha: 0, transformOrigin: '50% 50%',
+      duration: 0.8, ease: 'back.out(1.8)', stagger: 0.12,
+      scrollTrigger: { trigger: '.stats', start: 'top 82%' }
+    });
+
+    // Pop de los íconos de ¿Por qué elegirnos?
+    gsap.from('.why-item .why-icon', {
+      scale: 0, rotate: -25, autoAlpha: 0, transformOrigin: '50% 50%',
+      duration: 0.7, ease: 'back.out(2)', stagger: 0.12,
+      scrollTrigger: { trigger: '.why-grid', start: 'top 80%' }
+    });
   });
   window.addEventListener('load', () => ScrollTrigger.refresh());
 }
