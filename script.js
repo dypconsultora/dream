@@ -116,6 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+/* ---------- Botón ir arriba (scroll suave) ---------- */
+(function(){
+  const btn = document.querySelector('.to-top');
+  if (!btn) return;
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();
+
 /* ---------- FAQ acordeón: solo una abierta a la vez ---------- */
 (function(){
   const items = document.querySelectorAll('.faq-item');
