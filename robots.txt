@@ -1,4 +1,30 @@
+# Buscadores tradicionales
 User-agent: *
+Allow: /
+
+# IA / motores de respuesta (permitidos para que puedan citar el sitio)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: http://dreammarketing.com.ar/sitemap.xml
