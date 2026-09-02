@@ -39,8 +39,32 @@
       </div>
       <a href="https://wa.me/5491169541894?text=Hola%2C%20quiero%20agendar%20una%20consulta" target="_blank" rel="noopener" class="btn btn-primary nav-cta" data-es="Agendar consulta" data-en="Book a call">Agendar consulta</a>
     </div>
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<!-- ===== MENÚ MÓVIL ===== -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#hero" data-es="Inicio" data-en="Home">Inicio</a>
+  <a href="#about" data-es="Dream Team" data-en="Dream Team">Dream Team</a>
+  <a href="#services" data-es="Servicios" data-en="Services">Servicios</a>
+  <a href="#process" data-es="Procesos" data-en="Processes">Procesos</a>
+  <a href="#cases" data-es="Proyectos" data-en="Projects">Proyectos</a>
+  <a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a>
+  <a href="https://wa.me/5491169541894?text=Hola%2C%20quiero%20agendar%20una%20consulta" target="_blank" rel="noopener" class="mobile-cta" data-es="Agendar consulta" data-en="Book a call">Agendar consulta</a>
+  <div class="mobile-nav-controls">
+    <div class="lang-switch">
+      <button class="active" onclick="setLang('es',this)">ES</button>
+      <span class="divider">/</span>
+      <button onclick="setLang('en',this)">EN</button>
+    </div>
+    <div class="theme-switch" role="group" aria-label="Modo día / noche">
+      <button type="button" data-theme="light" class="active" onclick="setTheme('light')" aria-label="Modo día"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
+      <span class="divider">/</span>
+      <button type="button" data-theme="dark" onclick="setTheme('dark')" aria-label="Modo noche"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
+    </div>
+  </div>
+</div>
 
 <!-- ===== HERO ===== -->
 <header id="hero" class="hero">

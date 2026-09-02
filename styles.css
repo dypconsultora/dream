@@ -703,10 +703,49 @@ footer{
 .reveal.in{ opacity:1; transform:translateY(0); }
 
 /* ---------- Responsive ---------- */
+/* ---------- Menú móvil (base) ---------- */
+.nav-toggle{ display:none; }
+.mobile-nav{ display:none; }
+body.menu-open{ overflow:hidden; }
+body.menu-open .wapp, body.menu-open .to-top{ opacity:0; visibility:hidden; pointer-events:none; }
+
 @media (max-width:960px){
   .container{ padding:0 24px; }
   .nav-inner{ padding:6px 24px; gap:14px; }
   .nav-menu{ display:none; }
+  .nav-right{ display:none; }
+  .logo img{ height:50px; }
+  .nav-toggle{
+    display:flex; flex-direction:column; justify-content:center; gap:5px;
+    position:relative; z-index:1060; margin-left:auto;
+    width:42px; height:42px; padding:9px;
+    background:none; border:none; cursor:pointer;
+  }
+  .nav-toggle span{ display:block; height:2px; width:100%; background:var(--black-beauty); border-radius:2px; transition:.3s ease; }
+  .navbar:not(.scrolled) .nav-toggle span{ background:#fff; }
+  .nav-toggle.open span{ background:#fff; }
+  .nav-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2){ opacity:0; }
+  .nav-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+  .mobile-nav{
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+    position:fixed; inset:0; z-index:1055;
+    background:#161310;
+    opacity:0; visibility:hidden; transition:.32s ease;
+  }
+  .mobile-nav.open{ opacity:1; visibility:visible; }
+  .mobile-nav a{ color:#F4F5F0; font-size:23px; font-weight:400; letter-spacing:.01em; padding:11px 24px; }
+  .mobile-nav .mobile-cta{
+    margin-top:20px; background:#F4F5F0; color:#27262D;
+    padding:14px 32px; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+  }
+  .mobile-nav-controls{ margin-top:30px; display:flex; gap:30px; align-items:center; }
+  .mobile-nav-controls .lang-switch button,
+  .mobile-nav-controls .theme-switch button{ color:rgba(244,245,240,.65); }
+  .mobile-nav-controls .lang-switch button.active,
+  .mobile-nav-controls .theme-switch button.active{ color:#fff; }
+  .mobile-nav-controls .theme-switch button svg{ width:19px; height:19px; }
+  .mobile-nav-controls .divider{ color:rgba(244,245,240,.4); }
   .hero{ padding:130px 0 70px; }
   .hero-grid{ grid-template-columns:1fr; gap:50px; padding:0 24px; }
   .hero-img{ height:360px; }

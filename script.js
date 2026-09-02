@@ -144,6 +144,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+/* ---------- Menú móvil (hamburguesa) ---------- */
+(function(){
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('.mobile-nav');
+  if (!toggle || !menu) return;
+  const setOpen = (open) => {
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menu.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+  };
+  toggle.addEventListener('click', () => setOpen(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+})();
+
 /* ---------- Botón ir arriba (aparece al pasar el hero) ---------- */
 (function(){
   const btn = document.querySelector('.to-top');
